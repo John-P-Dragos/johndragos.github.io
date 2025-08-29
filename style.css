@@ -1,0 +1,284 @@
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      overflow-y:auto; 
+    }
+
+    .top-bar {
+      background-color: rgb(35, 130, 78);
+      color:rgba(250, 235, 215, 0.658);
+      height: 1.25in;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative; /* allow absolute positioning */
+      padding: 0 20px;
+      border:1px solid black;
+
+    }
+
+    /* Center the title */
+    .top-bar h1 {
+      position:absolute ;
+      left: 50%;
+      transform: translateX(-50%); /* true horizontal centering */
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .top-right{
+      position:absolute;
+      font-family:Georgia, 'Times New Roman', Times, serif ;
+      margin-left: auto;
+      display:flex;
+      align-items: flex-end;
+      flex-direction: column;
+      font-size: 1.em;
+      font-weight:bold;
+      color: rgba(250, 235, 215, 0.9);
+      line-height: 1.2;
+      transform:translateY(-50%);
+      top:50%;
+      right:60px;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 22px;
+      padding: 0;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color:rgba(250, 235, 215, 0.658);
+      border-radius: 2px;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      z-index: 2; /* keep clickable above centered title */
+    }
+
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      min-width: 160px;
+      border-radius: 6px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: lightgray;
+    }
+
+    /* Show when toggled */
+    .show {
+      display: block;
+    }
+  .bottom-bar {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(159, 184, 171);
+      color:black;
+      text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid black;
+      display:flex;
+      flex-direction:column;
+      align-items: center;
+      overflow-x:hidden;
+    }
+
+  .bottom-bar a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  .bottom-header{
+    font-weight:bold;
+    font-size:1.2em;
+    margin-bottom: 5px;
+  }
+  .bottom-links{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-right:85px;
+  }
+  .bottom-links a,
+  .bottom-links span{
+    color:rgb(98, 94, 94);
+    text-decoration:none;
+    font-size:1em;
+  }
+  .bottom-links a:hover{
+    text-decoration:underline;
+    color:rgb(98, 94, 94);;
+  }
+
+  .bottom-bar a:hover {
+      text-decoration: underline;
+      color: rgb(98, 94, 94);  /* brighten on hover */
+    }
+  .content {
+    max-width: 900px;   /* adjust width here */
+    margin: 60px auto;  /* center horizontally + spacing */
+    padding: 0 20px;
+  }
+
+  .content h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: rgb(35, 130, 78);
+  }
+
+  .inline-break {
+    text-align: center;
+    flex-basis:100%;
+    text-align:center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(35, 130, 78);
+    margin: 5px 0;
+  }
+  .small-inline-break {
+    text-align: center;
+    flex-basis:100%;
+    text-align:center;
+    font-size: .6em;
+    font-weight: bold;
+    color: rgb(35, 130, 78);
+    margin: 1px 0;
+  }
+
+
+
+  .about-container {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    gap:1px; /* better look for wrapping */
+  }
+
+  .profile-pic {
+    align-self:flex-start;
+    float: right;           /* makes text wrap */
+    width: 200px;          /* adjust image size */
+    height: auto;
+    margin: 0 0 20px 20px ; /* spacing around image */
+    border-radius: 12px;   /* rounded corners */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .about-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    flex:1;
+    text-align:justify;
+  }
+
+
+/* Resume container */
+.resume {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Resume main heading */
+.resume-name {
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: rgb(35, 130, 78); /* same green as site */
+  margin: 10px 0;
+}
+
+/* Contact info line */
+.resume-contact {
+  text-align: center;
+  font-size: 0.95em;
+  color: rgb(98, 94, 94);
+  margin-bottom: 25px;
+}
+
+.resume-contact a {
+  color: rgb(35, 130, 78);
+  text-decoration: none;
+}
+
+.resume-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Section headings (Education, Experience, etc.) */
+.resume h4 {
+  font-size: 1.2em;
+  color: rgb(35, 130, 78);
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+}
+
+/* Job blocks */
+.job {
+  margin-bottom: 20px;
+}
+
+.job .date {
+  float: right;
+  font-size: 0.9em;
+  font-style: italic;
+  color: rgb(98, 94, 94);
+}
+
+.job ul {
+  margin: 8px 0 0 20px;
+  padding: 0;
+  list-style: disc;
+}
+
+.job li {
+  margin-bottom: 5px;
+}
+
+/* Make resume responsive */
+@media (max-width: 600px) {
+  .job .date {
+    float: none;
+    display: block;
+    margin-top: 4px;
+  }
+}
